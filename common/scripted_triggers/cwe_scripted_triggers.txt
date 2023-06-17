@@ -24,6 +24,16 @@ is_not_sufficiently_independent = {
 	
 }
 
+is_a_colonial_subject_gov = {
+
+	OR = {
+		is_subject_type = subject_type_dominion
+		is_subject_type = subject_type_semi_autonomous_colony
+		is_subject_type = subject_type_mandate
+	}
+	
+}
+
 is_in_our_personal_union = {
 
 	is_direct_subject_of = ROOT
@@ -97,6 +107,15 @@ is_a_dictatorship = {
 		has_government_type = gov_soviet_republic
 		has_government_type = gov_theocratic_dictatorship
 		has_government_type = gov_theocratic_democracy
+	}
+	
+}
+
+is_a_presidential_regime = {
+
+	OR = {
+		has_government_type = gov_presidential_dictatorship
+		has_government_type = gov_presidential_regime
 	}
 	
 }
@@ -262,9 +281,24 @@ left_wing_ruling_coalition = {
 	}
 }
 
+right_wing_ruling_coalition = {
+	OR = { 
+		has_modifier = traditionalist_ruling_party_ideology
+		has_modifier = conservative_ruling_party_ideology
+		has_modifier = fascist_ruling_party_ideology
+	}
+}
+
 is_a_command_economy = {
 	OR = { 
 		has_law = law_type:law_command_economy
 		has_law = law_type:law_semi_command_economy
+	}
+}
+
+in_alliance_with_THIS = {
+	OR = { 
+		has_diplomatic_pact = { who = ROOT type = alliance }
+		has_diplomatic_pact = { who = ROOT type = defensive_pact }
 	}
 }

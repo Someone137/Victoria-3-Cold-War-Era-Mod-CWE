@@ -6,6 +6,7 @@ EGY = {
 	tier = kingdom
 	
 	cultures = { egyptian }
+	religion = sunni
 	capital = STATE_LOWER_EGYPT
 }
 
@@ -18,6 +19,7 @@ ALG = {
 	tier = kingdom
 	
 	cultures = { algerian }
+	religion = sunni
 	capital = STATE_LOWER_EGYPT
 }
 
@@ -30,6 +32,7 @@ UAR = {
 	tier = empire
 	
 	cultures = { pan_arab egyptian syrian }
+	religion = sunni
 	capital = STATE_LOWER_EGYPT
 }
 
@@ -108,6 +111,7 @@ MOR = {
 	tier = kingdom
 	
 	cultures = { moroccan }
+	religion = sunni
 	capital = STATE_FEZ
 }
 
@@ -228,7 +232,7 @@ NIG = {
 	capital = STATE_NIGER
 }
 
-# Democratic republic of Congo
+# Democratic Republic of Congo
 CNG = {
 	color = { 139 119 101 }
 
@@ -238,6 +242,42 @@ CNG = {
 
 	cultures = { congolese }
 	capital = STATE_BAS_CONGO
+}
+
+# Free Republic of the Congo
+FCG = {
+	color = { 240 128 128 }
+
+	country_type = recognized
+
+	tier = kingdom
+
+	cultures = { congolese }
+	capital = STATE_BAS_CONGO
+}
+
+# Katanga
+KAT = {
+	color = { 106 90 205 }
+
+	country_type = recognized
+
+	tier = principality
+
+	cultures = { congolese }
+	capital = STATE_KATANGA
+}
+
+# South Kasai
+SKA = {
+	color = { 170 206 95 }
+
+	country_type = recognized
+
+	tier = principality
+
+	cultures = { congolese }
+	capital = STATE_KASAI
 }
 
 # Republic of the Congo

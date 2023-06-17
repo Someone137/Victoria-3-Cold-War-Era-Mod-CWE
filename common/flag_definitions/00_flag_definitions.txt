@@ -256,7 +256,13 @@ UAE = { # Abu Dhabi
 		trigger = { 
 			OR = { 
 				coa_def_british_ensign_trigger = yes
-				scope:actor = { is_direct_subject_of = c:GBR }
+				scope:actor = { 
+					is_direct_subject_of = c:GBR 
+					OR = { 
+						is_a_colonial_subject_gov = yes
+						is_subject_type = subject_type_puppet
+					}
+				}
 			}
 		}
 	}
@@ -5507,11 +5513,23 @@ QUE = { # Quebec
 	}	
 }
 
-RHO = { # South Rhodesia
+RHO = { # Southern Rhodesia
 	flag_definition = {
-		coa = RHO
-		coa_with_overlord_canton = RHO_subject
+		coa = RHO_early
+		subject_canton = RHO_late
 		allow_overlord_canton = yes
+		coa_with_overlord_canton = RHO_subject
+		priority = 1
+	}
+	flag_definition = {
+		coa = RHO_late
+		subject_canton = RHO_late
+		allow_overlord_canton = yes
+		coa_with_overlord_canton = RHO_subject
+		priority = 2
+		trigger = { 
+			game_date >= 1968.11.11
+		}
 	}
 }
 
@@ -6994,7 +7012,10 @@ SUR = { # Suriname
 		subject_canton = SUR_subject
 		priority = 1
 		trigger = { 
-			scope:actor = { is_direct_subject_of = NET }
+			scope:actor = { 
+				is_direct_subject_of = NET
+				is_a_colonial_government = yes
+			}
 		}
 	}
 }
@@ -7074,7 +7095,10 @@ COM = { # Comoros
 		subject_canton = COM_subject
 		priority = 1
 		trigger = { 
-			scope:actor = { is_direct_subject_of = FRA }
+			scope:actor = { 
+				is_direct_subject_of = FRA
+				is_a_colonial_government = yes
+			}
 		}
 	}
 }
@@ -7091,6 +7115,65 @@ UAR = { # United Arab Republic
 		priority = 20
 		trigger = { 
 			coa_def_absolute_monarchy_flag_trigger = yes
+		}
+	}
+}
+
+CNG = { # DR Congo
+	flag_definition = {
+		coa = CNG_early
+		subject_canton = CNG_early
+		priority = 1
+	}
+	flag_definition = {
+		coa = CNG_middle
+		subject_canton = CNG_middle
+		priority = 2
+		trigger = {
+			game_date >= 1963.1.1
+		}
+	}
+	flag_definition = {
+		coa = CNG_late
+		subject_canton = CNG_late
+		priority = 3
+		trigger = {
+			game_date >= 1997.1.1
+		}
+	}
+	flag_definition = {
+		coa = CNG_modern
+		subject_canton = CNG_modern
+		priority = 4
+		trigger = {
+			game_date >= 1997.1.1
+		}
+	}
+	flag_definition = {
+		coa = CNG_nationalist
+		subject_canton = CNG_nationalist
+		priority = 10
+		trigger = {
+			scope:actor = { is_a_nationalist_government = yes }
+		}
+	}
+}
+
+AMB = { # Ambazonia
+	flag_definition = {
+		coa = AMB
+		subject_canton = AMB
+		priority = 1
+	}	
+	flag_definition = {
+		coa = AMB_subject
+		subject_canton = AMB_subject
+		priority = 1
+		trigger = { 
+			scope:actor = { 
+				is_direct_subject_of = GBR
+				is_a_colonial_government = yes
+			}
 		}
 	}
 }

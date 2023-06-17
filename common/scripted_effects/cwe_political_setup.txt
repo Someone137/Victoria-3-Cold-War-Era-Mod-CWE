@@ -311,6 +311,20 @@ effect_starting_politics_pro_nuclear_policy = {
 	activate_law = law_type:law_wmd_allowed
 }
 
+### Economic Specialisation ###
+
+effect_starting_politics_specialisation_natural_resource = {
+	activate_law = law_type:law_natural_resource_focus
+}
+
+effect_starting_politics_specialisation_manufacturing = {
+	activate_law = law_type:law_manufacturing_focus
+}
+
+effect_starting_politics_specialisation_services = {
+	activate_law = law_type:law_services_focus
+}
+
 ### SPECIAL ###
 
 effect_french_community_colony_laws = {
@@ -333,6 +347,39 @@ effect_socialist_ruling_coalition = {
 	every_interest_group = {
 		limit = {
 			has_ideology = ideology:ideology_left_economy
+		}
+		add_ruling_interest_group = yes
+	}
+}
+
+effect_communist_ruling_coalition = {
+	every_interest_group = {
+		limit = { is_in_government = yes }
+		remove_ruling_interest_group = yes
+	}
+	every_interest_group = {
+		limit = {
+			OR = { 
+				has_ideology = ideology:ideology_far_left_economy
+				has_ideology = ideology:ideology_communist
+			}
+		}
+		add_ruling_interest_group = yes
+	}
+}
+
+effect_conservative_ruling_coalition = {
+	every_interest_group = {
+		limit = { is_in_government = yes }
+		remove_ruling_interest_group = yes
+	}
+	every_interest_group = {
+		limit = {
+			OR = { 
+				has_ideology = ideology:ideology_far_right_economy
+				has_ideology = ideology:ideology_right_economy
+				has_ideology = ideology:ideology_conservative
+			}
 		}
 		add_ruling_interest_group = yes
 	}
